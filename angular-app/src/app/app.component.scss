@@ -1,0 +1,55 @@
+.nav-bar-wrapper {
+
+  .nav-menu {
+    .logo {
+      img {
+        margin: auto 10px;
+        width: 50px;
+        vertical-align: middle;
+      }
+    }
+
+    .tagline {
+      margin: auto 10px;
+      font-style: italic;
+      font-size: small;
+    }
+  }
+}
+
+.content {
+  padding: 40px;
+
+  section {
+    border-bottom: 1px solid gray;
+  }
+
+  .row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .order-form {
+
+    .order-phone,
+    .order-number {
+      padding: 10px;
+    }
+  }
+
+  .actions {
+    margin: auto;
+
+    button,
+    span {
+      margin: 0 10px;
+    }
+  }
+
+  .order-loading {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

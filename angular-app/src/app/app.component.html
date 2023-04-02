@@ -1,0 +1,44 @@
+<div class="nav-bar-wrapper">
+  <mat-toolbar class="nav-menu">
+    <div class="logo">
+      <img src="assets/bot-icon.png">
+    </div>
+    <div class="title">
+      {{title}}
+    </div>
+    <span class="tagline">Glory to our Robot Overlords!</span>
+  </mat-toolbar>
+
+</div>
+<div class="content" role="main">
+  <section>
+    <h4>Floor and Decor Order Status</h4>
+    <div class="row">
+      <form class="order-form" [formGroup]="orderForm">
+        <mat-form-field class="order-phone">
+          <mat-label>Phone Number</mat-label>
+          <input matInput formControlName="orderPhone">
+        </mat-form-field>
+        <mat-form-field class="order-number">
+          <mat-label>Order Number</mat-label>
+          <input matInput formControlName="orderNumber">
+        </mat-form-field>
+      </form>
+      <div class="actions">
+        <mat-spinner *ngIf="orderFormSubmitted" class="order-loading" diameter="20"></mat-spinner>
+        <button mat-flat-button [color]="'primary'" [disabled]="orderForm.invalid || orderFormSubmitted"
+          (click)="getOrderResults()">Fetch
+        </button>
+
+        <span>Result: {{orderResult}}</span>
+      </div>
+    </div>
+    <div *ngIf="orderImagePath" class="screenshot-container">
+      <div>Image from source:</div>
+      <img src={{orderImagePath}}>
+    </div>
+  </section>
+
+</div>
+
+<router-outlet></router-outlet>
